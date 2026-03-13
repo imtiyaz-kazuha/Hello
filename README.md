@@ -1,5 +1,4 @@
 Hello i'm imtiyaz
-About Imtiyaz
 </head>
 <body>
     <h1>About Me</h1>
