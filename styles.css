@@ -1,27 +1,248 @@
+/* Sci-Fi Cyberpunk Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0e27 0%, #1a0033 50%, #0d1b2a 100%);
+    background-attachment: fixed;
+    font-family: 'Courier New', monospace;
+    color: #00ff88;
+    overflow-x: hidden;
+}
+
+/* Animated background effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 150, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 200, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.header {
+    background: linear-gradient(90deg, #0a0e27 0%, #1a1a4d 50%, #0a0e27 100%);
+    color: #00ffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    text-shadow: 0 0 10px #00ff88;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.header::before {
+    content: '▮ ';
+    color: #ff00ff;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 49%, 100% { opacity: 1; }
+    50%, 99% { opacity: 0; }
+}
+
 .sidebar {
-    background-color: #f4f4f4;
-    padding: 15px;
+    background: linear-gradient(180deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 26, 77, 0.9) 100%);
+    padding: 20px;
     width: 250px;
     float: left;
+    border-right: 2px solid #00ff88;
+    box-shadow: 2px 0 15px rgba(0, 255, 136, 0.3);
+    min-height: 100vh;
+}
+
+.sidebar h2,
+.sidebar h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 8px 0;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+    color: #00ff88;
+}
+
+.sidebar li:hover {
+    border-left: 2px solid #ff00ff;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    padding-left: 15px;
 }
 
 .main-content {
     margin-left: 270px;
     padding: 20px;
+    padding-bottom: 100px;
+    min-height: 100vh;
 }
 
-.header {
-    background-color: #1e1e1e;
-    color: white;
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #00ff88;
+}
+
+.main-content a {
+    color: #00ffff;
+    text-decoration: none;
+    border-bottom: 1px solid #00ffff;
+    transition: all 0.3s ease;
+}
+
+.main-content a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+    border-bottom-color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Card style for content sections */
+.content-card {
+    background: rgba(26, 26, 77, 0.6);
+    border: 1px solid #00ff88;
     padding: 15px;
-    text-align: center;
+    margin: 15px 0;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
 .footer {
-    background-color: #ddd;
+    background: linear-gradient(90deg, #0a0e27 0%, #1a1a4d 50%, #0a0e27 100%);
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    border-top: 2px solid #ff00ff;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.2);
+    z-index: 100;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(26, 26, 77, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ffff, #ff00ff);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff00ff, #00ffff);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Button styling */
+button,
+input[type="button"],
+input[type="submit"] {
+    background: linear-gradient(135deg, #00ff88 0%, #00ffff 100%);
+    color: #0a0e27;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #00ffff 0%, #ff00ff 100%);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8);
+    transform: scale(1.05);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(26, 26, 77, 0.8);
+    color: #00ff88;
+    border: 1px solid #00ffff;
+    padding: 10px;
+    margin: 5px 0;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    background: rgba(26, 26, 77, 0.95);
+}
+
+/* Code blocks */
+code,
+pre {
+    background: rgba(10, 14, 39, 0.9);
+    color: #00ff88;
+    padding: 10px;
+    border: 1px solid #00ffff;
+    border-radius: 3px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.1);
+}
+
+pre {
+    padding: 15px;
+    margin: 10px 0;
 }
